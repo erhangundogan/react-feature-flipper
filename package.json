@@ -1,27 +1,57 @@
 {
   "name": "react-feature-flipper",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
+  "description": "Feature flipper React HOC and middleware",
+  "repository": "github:erhangundogan/react-feature-flipper",
+  "bugs": "https://github.com/erhangundogan/react-feature-flipper/issues",
+  "homepage": "https://github.com/erhangundogan/react-feature-flipper",
+  "keywords": [
+    "react",
+    "reactjs",
+    "redux",
+    "feature-flipper",
+    "middleware",
+    "redux-middleware",
+    "hoc"
+  ],
+  "author": "Erhan Gundogan <erhan.gundogan@gmail.com>",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "lib",
+    "es",
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf lib dist es",
+    "prepare": "yarn clean && yarn lint && yarn test",
+    "lint": "./node_modules/eslint/bin/eslint.js --config .eslintrc src/",
+    "test": "jest"
+  },
   "dependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react": "16.7.0",
+    "react-dom": "16.7.0",
+    "react-redux": "6.0.0",
+    "redux": "4.0.1"
   },
   "devDependencies": {
-    "react-scripts": "2.1.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+    "@babel/core": "7.1.6",
+    "babel-eslint": "9.0.0",
+    "babel-jest": "23.6.0",
+    "babel-loader": "8.0.4",
+    "babel-preset-flow": "6.23.0",
+    "cross-env": "1.0.7",
+    "eslint": "5.11.1",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-flowtype": "3.2.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-react": "7.11.1",
+    "jest": "^23.6.0",
+    "react-testing-library": "5.3.1",
+    "webpack": "4.19.1"
+  }
 }
