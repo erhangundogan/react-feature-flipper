@@ -36,7 +36,7 @@ const featureFlipper = ([WrappedComponent, featureFlippersPromise, feature]) => 
       }
       return (
         <>
-          { <WrappedComponent /> }
+          <WrappedComponent />
         </>
       );
     }

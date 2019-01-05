@@ -1,47 +1,33 @@
-/* eslint-disable no-unused-expressions */
-import webpack from 'webpack';
-import path from 'path';
+const path = require('path');
+const common = require('./webpack.config.common.js');
 
-const { NODE_ENV } = process.env;
+module.exports = (env, argv) => {
+  const { mode } = argv;
 
-const plugins = [
-  new webpack.optimize.OccurenceOrderPlugin(),
-  new webpack.DefinePlugin({
-    'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
-  }),
-];
-
-const filename = `react-feature-flipper${NODE_ENV === 'production' ? '.min' : ''}.js`;
-
-NODE_ENV === 'production' && plugins.push(
-  new webpack.optimize.UglifyJsPlugin({
-    compressor: {
-      pure_getters: true,
-      unsafe: true,
-      unsafe_comps: true,
-      screw_ie8: true,
-      warnings: false,
+  return {
+    mode,
+    entry: common.entry[mode],
+    plugins: common.plugins[mode],
+    devtool: mode === 'production' ? false : 'source-map',
+    devServer: {
+      contentBase: './dist',
+      port: 9000,
+      disableHostCheck: true,
+      host: '0.0.0.0',
+      public: 'localhost:9000'
     },
-  }),
-);
-
-export default {
-  module: {
-    loaders: [
-      { test: /\.js$/, loaders: ['babel-loader'], exclude: /node_modules/ },
-    ],
-  },
-
-  entry: [
-    './src/index',
-  ],
-
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename,
-    library: 'ReactFeatureFlipper',
-    libraryTarget: 'umd',
-  },
-
-  plugins,
+    output: {
+      filename: 'react-feature-flipper.js',
+      path: path.resolve(__dirname, 'dist'),
+      libraryTarget: 'umd',
+      library: 'ReactFeatureFlipper'
+    },
+    resolve: {
+      extensions: ['.js']
+    },
+    externals: common.externals[mode],
+    module: {
+      rules: common.rules
+    }
+  };
 };

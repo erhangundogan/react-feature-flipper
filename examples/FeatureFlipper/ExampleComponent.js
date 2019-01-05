@@ -1,7 +1,6 @@
 import React from 'react';
-import featureFlipper from '../../components/FeatureFlipper/FeatureFlipper';
+import featureFlipper from '../../dist/react-feature-flipper';
 import featureFlippersPromise from './features';
-import './style.css';
 
 const ExampleComponent = () => (
   <div className="example-component">

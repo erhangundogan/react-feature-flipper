@@ -30,5 +30,9 @@
       "html": true
     }],
     "react/prop-types": 0
+  },
+  "env": {
+    "node": true,
+    "jest": true
   }
 }
