@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ExampleContainer from './ExampleContainer';
+import Container from './Container';
 
 ReactDOM.render(
-  <ExampleContainer />,
+  <Container />,
   document.getElementById('root')
 );
