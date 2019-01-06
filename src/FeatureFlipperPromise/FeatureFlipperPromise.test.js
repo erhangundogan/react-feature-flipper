@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, waitForElement, wait } from 'react-testing-library';
-import featureFlipperPromise from '../featureFlipperPromise';
+import featureFlipperPromise from './FeatureFlipperPromise';
 
 const HelloWorld = () => (<div id="hello-world">Hello World!</div>);
 

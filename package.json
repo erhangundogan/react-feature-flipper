@@ -28,7 +28,7 @@
   "scripts": {
     "prepare": "yarn build",
     "lint": "./node_modules/eslint/bin/eslint.js --config .eslintrc src/",
-    "test": "jest",
+    "test": "jest --config jest.config.js",
     "build": "webpack --mode=production",
     "dev": "webpack-dev-server --open --mode=development"
   },
@@ -67,18 +67,5 @@
   },
   "resolutions": {
     "babel-core": "7.0.0-bridge.0"
-  },
-  "jest": {
-    "collectCoverage": true,
-    "coverageDirectory": "coverage",
-    "collectCoverageFrom": [
-      "src/*.js",
-      "!src/index.js",
-      "!src/__tests__/*"
-    ],
-    "coverageReporters": ["text"],
-    "verbose": true,
-    "moduleFileExtensions": ["js"],
-    "moduleDirectories": ["node_modules", "src"]
   }
 }
