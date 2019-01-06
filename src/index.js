@@ -1,5 +1,5 @@
-import featureFlipperStatic from './FeatureFlipperStatic';
+import featureFlipperStatic from './FeatureFlipperStatic/FeatureFlipperStatic';
 
-export { default as featureFlipperStatic } from './FeatureFlipperStatic';
-export { default as featureFlipperPromise } from './FeatureFlipperPromise';
 export default featureFlipperStatic;
+export { default as featureFlipperStatic } from './FeatureFlipperStatic/FeatureFlipperStatic';
+export { default as featureFlipperPromise } from './FeatureFlipperPromise/FeatureFlipperPromise';

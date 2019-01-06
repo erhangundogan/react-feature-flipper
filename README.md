@@ -1,6 +1,8 @@
 React Feature Flipper
 =====================
 
+[![Build Status](https://travis-ci.com/erhangundogan/react-feature-flipper.svg?branch=master)](https://travis-ci.com/erhangundogan/react-feature-flipper)
+
 React Feature Flipper HOC.
 
 > Feature Toggles (often also refered to as Feature Flags) are a powerful technique, allowing teams to modify system behavior without changing code.

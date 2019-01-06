@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-testing-library';
-import featureFlipperStatic from '../FeatureFlipperStatic';
+import featureFlipperStatic from './FeatureFlipperStatic';
 
 const HelloWorld = () => (<div id="hello-world">Hello World!</div>);
 

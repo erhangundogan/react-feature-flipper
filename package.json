@@ -1,6 +1,6 @@
 {
   "name": "react-feature-flipper",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "license": "MIT",
   "description": "Feature flipper React HOC and middleware",
   "repository": "github:erhangundogan/react-feature-flipper",
@@ -28,7 +28,7 @@
   "scripts": {
     "prepare": "yarn build",
     "lint": "./node_modules/eslint/bin/eslint.js --config .eslintrc src/",
-    "test": "jest",
+    "test": "jest --config jest.config.js",
     "build": "webpack --mode=production",
     "dev": "webpack-dev-server --open --mode=development"
   },
