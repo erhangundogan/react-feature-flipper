@@ -1,6 +1,6 @@
 {
   "name": "react-feature-flipper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "description": "Feature flipper React HOC and middleware",
   "repository": "github:erhangundogan/react-feature-flipper",
@@ -9,11 +9,14 @@
   "keywords": [
     "react",
     "reactjs",
-    "redux",
     "feature-flipper",
+    "feature-toggles",
+    "feature-flags",
     "middleware",
+    "redux",
     "redux-middleware",
-    "hoc"
+    "hoc",
+    "a/b testing"
   ],
   "author": "Erhan Gundogan <erhan.gundogan@gmail.com>",
   "main": "dist/react-feature-flipper.js",

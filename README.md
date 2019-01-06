@@ -7,15 +7,13 @@ React Feature Flipper HOC.
 >
 > -- <cite>Martin Fowler</cite>
 
-You can read about **feature flippers** (**feature toggles/flags**) [here](https://martinfowler.com/articles/feature-toggles.html) from Martin Fowler and [here](https://en.wikipedia.org/wiki/Feature_toggle) from wikipedia.
+If you don't know about **feature flippers** (**feature toggles/flags**) please read [here](https://martinfowler.com/articles/feature-toggles.html) from Martin Fowler and [here](https://en.wikipedia.org/wiki/Feature_toggle) from wikipedia.
 
-Basically this mechanism allows you to activate/de-active your in the production feature while your application is running. This activation could be done on certain criteria and it could be applied to certain individuals (customers, users).
+TL:DR; this technique allows you to activate/de-active your feature without changing code while your application is running. And this can be done on certain criteria and time. It can be applied to certain individuals (users) or you can use it for A/B testing.
 
-TL:DR;
+This library offers you a React HOC (high order component) to add your component into feature flipper. Currently feature flippers should be received through a Promise object. And feature can be activated/de-activated for everyone. There is no other criteria. 
 
-* It's quite easy and useful technique to test your feature in the production.
-* A/B testing.
-* Activate/de-activate feature anytime for anyone based on criteria.
+We are working on a middleware add-on. This will allow you to plug-in the feature flipper delivery and criteria methods.
 
 Installation
 ============
@@ -35,25 +33,35 @@ Usage
   import featureFlipper from 'react-feature-flipper';
   ```
 
-* Pass your component into `featureFlipper` HOC as a first item in the array.
-* Second item should be a promise to return feature flags.
-* And third item should be the name of the feature flag you want to bind component.
+* Pass required parameters into featureFlipper method call with an array (eg. `[Component, features, featureName]`)
+  1. Your Component
+  2. Promise to return feature flippers. It should be an object with a property `features` having type of a string array.
+  3. The name of the feature flipper (string) you want to bind to a Component (optional).
 
 ```js
 export default featureFlipper([
-  HelloWorld, // your component
+  HelloWorld,
   new Promise(resolve => 
     resolve({
       features: ['hello_world', 'blabla']
-    })), // features flippers list promise
-  'hello_world', // feature name to enable/disable <HelloWorld />
+    })),
+  'hello_world',
 ])
 ```
 
+If you omit 3rd parameter (feature flipper name) HOC uses then name of the component to find required feature flipper. It would be `HelloWorld` if you consider the previous example.
+
+Tools
+===== 
+
 If you would like to see the example running on your local machine then:
 
-* Clone the project `git clone git@github.com:erhangundogan/react-feature-flipper.git`
+* Clone the project
+
+  `git clone git@github.com:erhangundogan/react-feature-flipper.git`
+
 * Run `yarn`
+
 * And then run `yarn dev`
 
 Example is located in `examples/FeatureFlipper` folder.
