@@ -9,7 +9,7 @@ const commonPlugins = [
 module.exports = {
   entry: {
     development: './examples/FeatureFlipper/index.js',
-    production: './src/FeatureFlipper.js'
+    production: './src/index.js'
   },
   plugins: {
     development: commonPlugins.concat([
