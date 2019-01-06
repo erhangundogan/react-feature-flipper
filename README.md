@@ -29,7 +29,7 @@ Usage
 
 There are 2 HOCs:
 
-##### featureFlipper (or alternatively featureFlipperStatic with named import)
+### featureFlipper (or alternatively featureFlipperStatic with named import)
 
 This component is the default export of a library.
 
@@ -47,7 +47,7 @@ export default featureFlipper([HelloWorld, true])
 ```
 
 
-#### featureFlipperPromise
+### featureFlipperPromise
 
 * Import `featureFlipperPromise` into your React project.
 
@@ -73,25 +73,45 @@ export default featureFlipper([
 ])
 ```
 
+Usage with other HOCs
+=====================
+
+You can pass wrapped component directly into featureFlipper. for example with redux `connect`
+
+```js
+export default featureFlipper([
+  connect(mapStateToProps, mapDispatchToProps)(HelloWorld),
+  true
+]);
+```
+
+I recommend you to create another file if you would like to enable feature flippers for multiple components. It would be easier to track down feature flipped components.
+
+```js
+import featureFlipper from 'react-feature-flipper';
+import { default as FooBase } from './Foo';
+import { default as BarBase } from './Bar';
+
+export const Foo = featureFlipper([FooBase, true]);
+export const Bar = featureFlipper([BarBase, false]);
+```
+
+
 Tools
 ===== 
 
-If you would like to see the example running on your local machine then:
+If you would like to see the example (example is located in `examples/FeatureFlipper` folder) running on your local machine then:
 
-* Clone the project
-
-  `git clone git@github.com:erhangundogan/react-feature-flipper.git`
-
-* Run
-
-  * `yarn`
-  * `yarn build`
-  * `yarn dev` it should browse http://localhost:9000
+```bash
+git clone git@github.com:erhangundogan/react-feature-flipper.git
+cd react-feature-flipper
+yarn
+yarn dev
+```
+browse http://localhost:9000
   
 
-Example is located in `examples/FeatureFlipper` folder.
-
-Some other commands:
+Other commands:
 
 ```bash
 yarn build

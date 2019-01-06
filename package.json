@@ -1,8 +1,8 @@
 {
   "name": "react-feature-flipper",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "license": "MIT",
-  "description": "Feature flipper React HOC and middleware",
+  "description": "React HOC for feature toggling",
   "repository": "github:erhangundogan/react-feature-flipper",
   "engines": {
     "node": ">=8"
