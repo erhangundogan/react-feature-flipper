@@ -1,6 +1,6 @@
 {
   "name": "react-feature-flipper",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "license": "MIT",
   "description": "Feature flipper React HOC and middleware",
   "repository": "github:erhangundogan/react-feature-flipper",
